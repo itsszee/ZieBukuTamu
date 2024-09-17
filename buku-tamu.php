@@ -20,7 +20,13 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Daftar Tamu</h6>
+            <button type="button" class="btn btn-primary btn-icon-split" 
+            data-toggle="modal" data-target="#tambahModal">
+                <span class="icon text-white-50">
+                    <i class="fas fa-plus"></i>
+                </span>
+                <span class="text">Data Tamu</span>
+            </button>
         </div>
 
         <div class="card-body">
@@ -63,12 +69,33 @@
                 </table>   
             </div>
         </div>
-        
-
     </div>
 
 </div>
 <!-- /.container-fluid -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="tambahModal" tabindex="-1" aria-labelledby="tambahModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tambahModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <?php
     include_once('templates/footer.php'); 
