@@ -7,8 +7,8 @@ function query($query) {
     global $koneksi;
     $result = mysqli_query($koneksi, $query);
     $rows = [];
-    while ($rows =  mysqli_fetch_assoc($result)) {
-        $rows[] = $rows;
+    while ($row =  mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
     }
     return $rows;
 }
