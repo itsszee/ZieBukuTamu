@@ -2,6 +2,11 @@
     include_once('templates/header.php');
 ?>
 
+<?php
+    require_once('function.php');
+    include_once('templates/header.php');
+?>
+
 <!-- Custom styles for this page -->
 <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
@@ -15,40 +20,45 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Daftar Tamu</h6>
         </div>
+
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>No</th>
+                            <th>Tanggal</th>
+                            <th>Nama Tamu</th>
+                            <th>Alamat</th>
+                            <th>No. Telp/HP</th>
+                            <th>Bertemu dengan</th>
+                            <th>Kepentingan</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                        </tr>
-                    </tfoot>
+
                     <tbody>
+                        <?php
+                        //penomoran auto-increment
+                        $no = 1;
+                        // query untuk memanggil semua data daru tabel buku_tamu
+                        $buku_tamu = query("SELECT * FROM bukutamu");
+                        foreach($buku_tamu as $tamu) : ?>
+
                         <tr>
-                            <td>Donna Snider</td>
-                            <td>Customer Support</td>
-                            <td>New York</td>
-                            <td>27</td>
-                            <td>2011/01/25</td>
-                            <td>$112,000</td>
+                            <td><?= $no++; ?></td>
+                            <td><?= $tamu['tanggal'] ?></td>
+                            <td><?= $tamu['nama_tamu'] ?></td>
+                            <td><?= $tamu['alamat'] ?></td>
+                            <td><?= $tamu['no_hp'] ?></td>
+                            <td><?= $tamu['bertemu'] ?></td>
+                            <td><?= $tamu['kepentingan'] ?></td>
+                            <td><button class="btn btn-success">Ubah</button>
+                            <button class="btn btn-danger">Hapus</button></td>
                         </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>   
             </div>
@@ -68,5 +78,5 @@
 <script src="assets/js/demo/datatables-demo.js"></script>
 
 <?php
-    include_once('templates/footer.php');
+    include_once('templates/footer.php'); 
 ?>
