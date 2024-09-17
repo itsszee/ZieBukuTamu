@@ -44,7 +44,7 @@
                         //penomoran auto-increment
                         $no = 1;
                         // query untuk memanggil semua data daru tabel buku_tamu
-                        $buku_tamu = query("SELECT * FROM bukutamu");
+                        $buku_tamu = query("SELECT * FROM `bukutamu`");
                         foreach($buku_tamu as $tamu) : ?>
 
                         <tr>
