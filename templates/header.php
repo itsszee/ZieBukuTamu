@@ -50,7 +50,7 @@
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="buku-tamu.php">
                     <i class="fas fa-fw fa-book-open"></i>
                     <span>Buku Tamu</span>
                 </a>
