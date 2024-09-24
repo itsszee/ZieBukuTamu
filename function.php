@@ -48,7 +48,7 @@ function ubah_tamu($data)
     $bertemu        = htmlspecialchars($data["bertemu"]);
     $kepentingan    = htmlspecialchars($data["kepentingan"]);
 
-    $query ="UPDATE bukutamu SET 
+    $query = "UPDATE bukutamu SET 
             nama_tamu         = '$nama_tamu',
             alamat            = '$alamat',
             no_hp             = '$no_hp',
@@ -62,7 +62,8 @@ function ubah_tamu($data)
 }
 
 // function hapus data tamu
-function hapus_tamu($id) {
+function hapus_tamu($id)
+{
     global $koneksi;
 
     $query = "DELETE FROM bukutamu WHERE id_tamu = '$id'";
@@ -85,6 +86,26 @@ function tambah_user($data)
     $user_role         = htmlspecialchars($data["user_role"]);
 
     $query = "INSERT INTO users VALUES ('$kode','$username','$password','$user_role')";
+
+    mysqli_query($koneksi, $query);
+
+    return mysqli_affected_rows($koneksi);
+}
+
+
+// function ubah data user
+function ubah_user($data)
+{
+    global $koneksi;
+    $id           = htmlspecialchars($data["id_user"]);
+    $username    = htmlspecialchars($data["username"]);
+    $user_role        = htmlspecialchars($data["user_role"]);
+
+    $query = "UPDATE users SET
+        username        = '$username',
+        user_role            = '$user_role'
+        WHERE id_user   = '$id'
+    ";
 
     mysqli_query($koneksi, $query);
 
