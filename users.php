@@ -7,6 +7,19 @@ require_once('function.php');
 include_once('templates/header.php');
 ?>
 
+
+<?php
+
+if (isset($_SESSION['role']) && $_SESSION['role'] != 'Admin') {
+    echo "<script>alert('Anda tidak memiliki akses untuk halaman ini!')</script>";
+    echo "<script>window.location.href='index.php'</script>";
+}
+
+?>
+
+
+
+
 <!-- Custom styles for this page -->
 <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
@@ -193,6 +206,8 @@ $kodeuser = $huruf . sprintf("%02s", $urutan)
         </div>
     </div>
 </div>
+
+
 
 <?php
 include_once('templates/footer.php');
