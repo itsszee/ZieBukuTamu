@@ -126,7 +126,7 @@ $kodeuser = $huruf . sprintf("%02s", $urutan)
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="tambahModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="tambahModalLabel">Add Users</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

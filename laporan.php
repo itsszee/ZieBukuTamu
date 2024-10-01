@@ -80,14 +80,14 @@ include_once('templates/header.php');
                             // Penomoran auto-increment
                             $no = 1;
                             // Query untuk memanggil semua data dari tabel bukutamu
-                            $buku_tamu = query("SELECT * FROM bukutamu WHERE tanggal BETWEEN '$p_awal' AND '$p_akhhir' ");
+                            $buku_tamu = query("SELECT * FROM bukutamu WHERE tanggal BETWEEN '$p_awal' AND '$p_akhir' ");
                             foreach ($buku_tamu as $tamu) : ?>
                                 <tr>
                                     <td><?= $no++; ?></td>
                                     <td><?= $tamu['tanggal'] ?></td>
                                     <td><?= $tamu['nama_tamu'] ?></td>
                                     <td><?= $tamu['alamat'] ?></td>
-                                    <td><?= $tamu['no_hpl'] ?></td>
+                                    <td><?= $tamu['no_hp'] ?></td>
                                     <td><?= $tamu['bertemu'] ?></td>
                                     <td><?= $tamu['kepentingan'] ?></td>
                                     <td>

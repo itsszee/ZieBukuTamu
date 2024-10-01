@@ -84,8 +84,9 @@ function tambah_user($data)
     $username      = htmlspecialchars($data["username"]);
     $password         = htmlspecialchars($data["password"]);
     $user_role         = htmlspecialchars($data["user_role"]);
+    $password_hash       = password_hash($password, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO users VALUES ('$kode','$username','$password','$user_role')";
+    $query = "INSERT INTO users VALUES ('$kode','$username','$password_hash','$user_role')";
 
     mysqli_query($koneksi, $query);
 
